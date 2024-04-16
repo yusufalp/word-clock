@@ -31,32 +31,41 @@ function updateWordClockHour(hour) {
 
 function updateWordClockMinute(minute) {
   const minuteElements = document.querySelectorAll(".minute");
+
+  const oclock = document.querySelector(".oclock");
+  const o = document.querySelector(".o");
+
   for (const minuteElement of minuteElements) {
     if (minuteElement.classList.contains("opaque")) {
       minuteElement.classList.remove("opaque");
     }
   }
 
-  if (minute === 0) {
-    const oclock = document.querySelector(".oclock");
-    oclock.classList.add("opaque");
-    return;
+  if (oclock.classList.contains("opaque")) {
+    oclock.classList.remove("opaque");
   }
 
-  if (minute > 0 && minute <= 9) {
-    const o = document.querySelector(".o");
-    o.classList.add("opaque");
-  }
-
-  if (minute >= 10 && minute <= 19) {
-    minuteElements[minute - 10].classList.add("opaque");
+  if (o.classList.contains("opaque")) {
+    o.classList.remove("opaque");
   }
 
   const minuteRemainder = minute % 10;
   const quotient = Math.floor(minute / 10);
 
-  if (minuteRemainder > 0 && minuteRemainder <= 9) {
+  if (minuteRemainder !== 0) {
     minuteElements[minuteRemainder + 13].classList.add("opaque");
+  }
+
+  if (minute === 0) {
+    oclock.classList.add("opaque");
+  }
+
+  if (minute > 0 && minute <= 9) {
+    o.classList.add("opaque");
+  }
+
+  if (minute >= 10 && minute <= 19) {
+    minuteElements[minute - 10].classList.add("opaque");
   }
 
   if (minute >= 20 && minute < 60) {
