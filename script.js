@@ -26,7 +26,9 @@ function updateWordClockHour(hour) {
     }
   }
 
-  hourElements[hour - 1].classList.add("opaque");
+  const hourRemaining = hour % 12;
+
+  hourElements[hourRemaining - 1].classList.add("opaque");
 }
 
 function updateWordClockMinute(minute) {
