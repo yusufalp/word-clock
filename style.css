@@ -24,3 +24,35 @@ span {
   letter-spacing: 12px;
   opacity: .25;
 }
+
+.opaque {
+    opacity: 1;
+}
+
+@media (min-width: 640px) {
+  p {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+
+  span {
+    letter-spacing: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.5rem;
+  }
+  span {
+    letter-spacing: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  p {
+    font-size: 2rem;
+  }
+}
