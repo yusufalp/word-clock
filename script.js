@@ -31,6 +31,12 @@ function updateWordClockHour(hour) {
 
 function updateWordClockMinute(minute) {
   const minuteElements = document.querySelectorAll(".minute");
+  for (const minuteElement of minuteElements) {
+    if (minuteElement.classList.contains("opaque")) {
+      minuteElement.classList.remove("opaque");
+    }
+  }
+
   if (minute === 0) {
     const oclock = document.querySelector(".oclock");
     oclock.classList.add("opaque");
