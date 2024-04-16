@@ -1,0 +1,26 @@
+body {
+  box-sizing: border-box;
+  font-family: "Noto Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+span {
+  letter-spacing: 12px;
+  opacity: .25;
+}
