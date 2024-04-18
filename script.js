@@ -27,8 +27,9 @@ function updateWordClockHour(hour) {
   }
 
   const hourRemaining = hour % 12;
+  const hourIndex = hourRemaining === 0 ? 11 : hourRemaining - 1;
 
-  hourElements[hourRemaining - 1].classList.add("opaque");
+  hourElements[hourIndex].classList.add("opaque");
 }
 
 function updateWordClockMinute(minute) {
@@ -54,10 +55,6 @@ function updateWordClockMinute(minute) {
   const minuteRemainder = minute % 10;
   const quotient = Math.floor(minute / 10);
 
-  if (minuteRemainder !== 0) {
-    minuteElements[minuteRemainder + 13].classList.add("opaque");
-  }
-
   if (minute === 0) {
     oclock.classList.add("opaque");
   }
@@ -72,6 +69,9 @@ function updateWordClockMinute(minute) {
 
   if (minute >= 20 && minute < 60) {
     minuteElements[quotient + 8].classList.add("opaque");
+    if (minuteRemainder !== 0) {
+      minuteElements[minuteRemainder + 13].classList.add("opaque");
+    }
   }
 }
 
