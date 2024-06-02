@@ -61,6 +61,7 @@ function updateWordClockMinute(minute) {
 
   if (minute > 0 && minute <= 9) {
     o.classList.add("opaque");
+    minuteElements[minuteElements.length - 10 + minute].classList.add("opaque")
   }
 
   if (minute >= 10 && minute <= 19) {
